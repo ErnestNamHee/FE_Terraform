@@ -6,7 +6,7 @@ EOF
  
 echo "OK, let's rock and roll!!"
 
-
+sudo yum clean all & yum clean metadata
 #get rid of iptables since it is only a demo
 sudo systemctl stop firewalld
 sudo systemctl disable firewalld
