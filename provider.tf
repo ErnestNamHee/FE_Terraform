@@ -1,9 +1,9 @@
   provider "flexibleengine" {
-  user_name = "XXXXXXXXXXXXX"
-  domain_name = "XXXXXXXXX"
-  tenant_name = "XXXXXXXXXXXXX"
-  access_key = "XXXXXXXXXXXXXXX"
-  secret_key = "XXXXXXXXXXXXXXXXXXXXXXXXXX"
+  user_name = "shi.dafu"
+  domain_name = "OCB0001686"
+  tenant_name = "eu-west-0_project1"
+  access_key = "TCO1S6PBJJS32DYK5CQX"
+  secret_key = "K0cLN7B945S9ld1IP85dKAuEQP8NcKVM2WmAfVLf"
   
   auth_url = "https://iam.eu-west-0.prod-cloud-ocb.orange-business.com/v3"
   region = "eu-west-0"
