@@ -1,0 +1,1 @@
+ 将Terraform输出改成 ssh -i KeyPair-CCE-DEMO.pem -t cloud@90.84.47.203 'sudo cat /var/lib/jenkins/secrets/initialAdminPassword'

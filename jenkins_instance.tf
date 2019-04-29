@@ -37,7 +37,7 @@ output "SSH" {
 }
 
 output "jenkins_credential"{ 
-  value = "sudo cat /var/lib/jenkins/secrets/initialAdminPassword"
+  value = "ssh -i KeyPair-CCE-DEMO.pem -t cloud@${flexibleengine_vpc_eip_v1.eip_1.publicip.0.ip_address} 'sudo cat /var/lib/jenkins/secrets/initialAdminPassword'"
 }
 
 

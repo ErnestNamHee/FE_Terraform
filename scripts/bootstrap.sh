@@ -6,13 +6,13 @@ EOF
  
 echo "OK, let's rock and roll!!"
 
-sudo yum clean all & yum clean metadata
+
 #get rid of iptables since it is only a demo
 sudo systemctl stop firewalld
 sudo systemctl disable firewalld
 sudo systemctl mask --now firewalld
 
-
+sudo yum clean all & yum clean metadata
 #install docker-ce
 sudo yum install -y -q yum-utils device-mapper-persistent-data vm2 #We need these
 #add repository
