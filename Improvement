@@ -1,1 +1,13 @@
  将Terraform输出改成 ssh -i KeyPair-CCE-DEMO.pem -t cloud@90.84.47.203 'sudo cat /var/lib/jenkins/secrets/initialAdminPassword'
+
+进入Jenkins中，加入config file
+创建SWR使用的长久credential：https://docs.prod-cloud-ocb.orange-business.com/en-us/usermanual/swr/swr_01_1000.html
+
+printf "$AK" | openssl dgst -binary -sha256 -hmac "$SK" | od -An -vtx1 | sed 's/[ \n]//g'
+
+导入时注意格式，弄一个自动化吧
+
+虚拟机上传镜像的时间取决于Terraform中给虚拟机配的EIP的带宽大小
+
+在你自己的CCE中设置secret
+
