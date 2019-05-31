@@ -1,7 +1,7 @@
 #!/bin/bash
-cat << EOF >> /etc/hosts
-90.84.244.233 kubernetes.default.svc.cluster.local
-EOF
+#cat << EOF >> /etc/hosts
+#90.84.244.233 kubernetes.default.svc.cluster.local
+#EOF
 ###################################### Change the IP address above to your CCE cluster IP####################
  
 echo "OK, let's rock and roll!!"
