@@ -2,7 +2,7 @@
 write_files:
 - encoding: b64
   content: |
-    #create it first
+  	#create it first
   owner: root:root
   path: /etc/docker/test_file
   permissions: '0750'
