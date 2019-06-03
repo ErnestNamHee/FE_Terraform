@@ -38,7 +38,7 @@ resource "flexibleengine_vpc_subnet_v1" "subnet_v1" {
 }
 */
 /*How to add a CIDR range for VPC???? I only created a range with vpc resource instead of router*/
-
+/*
 resource "flexibleengine_vpc_eip_v1" "eip_1" {
   publicip {
     type = "5_bgp"
@@ -49,3 +49,4 @@ resource "flexibleengine_vpc_eip_v1" "eip_1" {
     share_type = "PER"
   }
 }
+*/
