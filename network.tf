@@ -1,3 +1,4 @@
+/*
 resource "flexibleengine_networking_router_v2" "router" {
   name             = "vpc_for_jenkins"
   admin_state_up   = "true"
@@ -35,7 +36,7 @@ resource "flexibleengine_vpc_subnet_v1" "subnet_v1" {
   vpc_id = "${flexibleengine_vpc_v1.vpc_v1.id}"
   dns_list = ["100.125.0.41","100.126.0.41"]
 }
-
+*/
 /*How to add a CIDR range for VPC???? I only created a range with vpc resource instead of router*/
 
 resource "flexibleengine_vpc_eip_v1" "eip_1" {
