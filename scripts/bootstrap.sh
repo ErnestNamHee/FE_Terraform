@@ -14,29 +14,29 @@ sudo systemctl mask --now firewalld
 
 sudo yum clean all & yum clean metadata
 #install docker-ce
-sudo yum install -y -q yum-utils device-mapper-persistent-data vm2 #We need these
+# In init.tpl ---  sudo yum install -y -q yum-utils device-mapper-persistent-data vm2 #We need these
 #add repository
-sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+# In init.tpl ---  sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 #Install docker-ce
-sudo yum install -y -q docker-ce docker-ce-cli containerd.io
+# In init.tpl ---  sudo yum install -y -q docker-ce docker-ce-cli containerd.io
 
 
 #test
 
-if [[ ! -e /etc/docker/daemon.json ]];then
-	mkdir -p /etc/docker
-	touch /etc/docker/daemon.json
-fi
+# In init.tpl ---  if [[ ! -e /etc/docker/daemon.json ]];then
+# In init.tpl ---  	mkdir -p /etc/docker
+# In init.tpl ---  	touch /etc/docker/daemon.json
+# In init.tpl ---  fi
 
 ###############################
 #Configure Docker
 #Create daemon.json since it is not yet existing
-echo "create daemon file"
-cat << EOF >> /etc/docker/daemon.json
-{
-"insecure-registries":["registry.eu-west-0.prod-cloud-ocb.orange-business.com"]
-}
-EOF
+# In init.tpl ---  echo "create daemon file"
+# In init.tpl ---  cat << EOF >> /etc/docker/daemon.json
+# In init.tpl ---  {
+# In init.tpl ---  "insecure-registries":["registry.eu-west-0.prod-cloud-ocb.orange-business.com"]
+# In init.tpl ---  }
+# In init.tpl ---  EOF
 ##################################### this is the endpoint for SWR##############################
 
 
@@ -51,7 +51,7 @@ sudo systemctl enable docker
 
 
 #Install Java
-sudo yum install -y -q java-1.8.0-openjdk-devel
+# In init.tpl ---  sudo yum install -y -q java-1.8.0-openjdk-devel
 #configure jenkins repository step 1: Import pgp key; step 2: import repo
 curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo
 sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
@@ -76,18 +76,18 @@ sudo systemctl enable jenkins
 
 
 #Install git
-sudo yum install -y -q git
+# In init.tpl ---  sudo yum install -y -q git
 
 #Install kubectl
-cat <<EOF > /etc/yum.repos.d/kubernetes.repo
-[kubernetes]
-name=Kubernetes
-baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
-enabled=1
-gpgcheck=1
-repo_gpgcheck=1
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-EOF
+# In init.tpl ---  cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+# In init.tpl ---  [kubernetes]
+# In init.tpl ---  name=Kubernetes
+# In init.tpl ---  baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+# In init.tpl ---  enabled=1
+# In init.tpl ---  gpgcheck=1
+# In init.tpl ---  repo_gpgcheck=1
+# In init.tpl ---  gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+# In init.tpl ---  EOF
 
-yum install -y -q kubectl
+# In init.tpl ---  yum install -y -q kubectl
 
